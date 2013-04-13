@@ -1,0 +1,56 @@
+.TreeAlertMsgbt_mouseout
+{
+	border-right: #2C59AA 1px solid;
+	padding-right: 2px;
+	border-top: #2C59AA 1px solid;
+	padding-left: 2px;
+	font-size: 12px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+	border-left: #2C59AA 1px solid;
+	cursor: hand;
+	color: black;
+	padding-top: 2px;
+	border-bottom: #2C59AA 1px solid;
+}
+.TreeAlertMsgbt_mouseover
+{
+	border-right: #2C59AA 1px solid;
+	padding-right: 2px;
+	border-top: #2C59AA 1px solid;
+	padding-left: 2px;
+	font-size: 12px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D7E7FA);
+	border-left: #2C59AA 1px solid;
+	cursor: hand;
+	color: black;
+	padding-top: 2px;
+	border-bottom: #2C59AA 1px solid;
+}
+.TreeAlertMsgbt_mousedown
+{
+	border-right: #FFE400 1px solid;
+	padding-right: 2px;
+	border-top: #FFE400 1px solid;
+	padding-left: 2px;
+	font-size: 12px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+	border-left: #FFE400 1px solid;
+	cursor: hand;
+	color: black;
+	padding-top: 2px;
+	border-bottom: #FFE400 1px solid;
+}
+.TreeAlertMsgbt_mouseup
+{
+	border-right: #2C59AA 1px solid;
+	padding-right: 2px;
+	border-top: #2C59AA 1px solid;
+	padding-left: 2px;
+	font-size: 12px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+	border-left: #2C59AA 1px solid;
+	cursor: hand;
+	color: black;
+	padding-top: 2px;
+	border-bottom: #2C59AA 1px solid;
+}
