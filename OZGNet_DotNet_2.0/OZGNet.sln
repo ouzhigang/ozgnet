@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OZGNet_DotNet_2.0", "OZGNet_DotNet_2.0", "{EABE1F4C-19F3-4D28-800E-9D2CE03622C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet", "OZGNet\OZGNet.csproj", "{0A805C28-8BC6-4D9C-9236-1FD1544EAB0E}"
@@ -28,16 +28,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.Debug", "OZGNet.Debug\OZGNet.Debug.csproj", "{7488D2E3-7292-412A-B5D3-8C29168E2AC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.Compression", "OZGNet.Compression\OZGNet.Compression.csproj", "{A6F5718D-C43D-48D3-BF8E-CE432E2960AF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.WebFormControls", "OZGNet.WebFormControls\OZGNet.WebFormControls.csproj", "{2CDA7513-2D54-4474-AF02-B18D0E4D3791}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.WinFormControls", "OZGNet.WinFormControls\OZGNet.WinFormControls.csproj", "{FF3D948A-3311-479F-A325-946ECF374C50}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.WebForm.TLib", "OZGNet.WebForm.TLib\OZGNet.WebForm.TLib.csproj", "{7FE5A324-9DB1-47D8-8018-60F9A5325C91}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.WebFormControls.TLib", "OZGNet.WebFormControls.TLib\OZGNet.WebFormControls.TLib.csproj", "{DDC3173F-2BCE-4CC8-960C-653DA6BA48CC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZGNet.WinFormControls.TLib", "OZGNet.WinFormControls.TLib\OZGNet.WinFormControls.TLib.csproj", "{FAD4FB3F-7576-40E6-AA89-644B3AC65727}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,26 +87,6 @@ Global
 		{A6F5718D-C43D-48D3-BF8E-CE432E2960AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6F5718D-C43D-48D3-BF8E-CE432E2960AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6F5718D-C43D-48D3-BF8E-CE432E2960AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CDA7513-2D54-4474-AF02-B18D0E4D3791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CDA7513-2D54-4474-AF02-B18D0E4D3791}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CDA7513-2D54-4474-AF02-B18D0E4D3791}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CDA7513-2D54-4474-AF02-B18D0E4D3791}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF3D948A-3311-479F-A325-946ECF374C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF3D948A-3311-479F-A325-946ECF374C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF3D948A-3311-479F-A325-946ECF374C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF3D948A-3311-479F-A325-946ECF374C50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FE5A324-9DB1-47D8-8018-60F9A5325C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FE5A324-9DB1-47D8-8018-60F9A5325C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FE5A324-9DB1-47D8-8018-60F9A5325C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FE5A324-9DB1-47D8-8018-60F9A5325C91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDC3173F-2BCE-4CC8-960C-653DA6BA48CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDC3173F-2BCE-4CC8-960C-653DA6BA48CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDC3173F-2BCE-4CC8-960C-653DA6BA48CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDC3173F-2BCE-4CC8-960C-653DA6BA48CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAD4FB3F-7576-40E6-AA89-644B3AC65727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAD4FB3F-7576-40E6-AA89-644B3AC65727}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAD4FB3F-7576-40E6-AA89-644B3AC65727}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAD4FB3F-7576-40E6-AA89-644B3AC65727}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

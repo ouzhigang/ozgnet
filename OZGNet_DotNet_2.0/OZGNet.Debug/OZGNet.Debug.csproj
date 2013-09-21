@@ -97,29 +97,9 @@
       <Project>{C6287AFB-3D54-4687-B016-45B18647CCF8}</Project>
       <Name>OZGNet.SysInfo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OZGNet.WebForm.TLib\OZGNet.WebForm.TLib.csproj">
-      <Project>{7FE5A324-9DB1-47D8-8018-60F9A5325C91}</Project>
-      <Name>OZGNet.WebForm.TLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OZGNet.WebFormControls.TLib\OZGNet.WebFormControls.TLib.csproj">
-      <Project>{DDC3173F-2BCE-4CC8-960C-653DA6BA48CC}</Project>
-      <Name>OZGNet.WebFormControls.TLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OZGNet.WebFormControls\OZGNet.WebFormControls.csproj">
-      <Project>{2CDA7513-2D54-4474-AF02-B18D0E4D3791}</Project>
-      <Name>OZGNet.WebFormControls</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OZGNet.WebForm\OZGNet.WebForm.csproj">
       <Project>{075A046E-AD42-4BCE-9091-FA28FB1F49EF}</Project>
       <Name>OZGNet.WebForm</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OZGNet.WinFormControls.TLib\OZGNet.WinFormControls.TLib.csproj">
-      <Project>{FAD4FB3F-7576-40E6-AA89-644B3AC65727}</Project>
-      <Name>OZGNet.WinFormControls.TLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OZGNet.WinFormControls\OZGNet.WinFormControls.csproj">
-      <Project>{FF3D948A-3311-479F-A325-946ECF374C50}</Project>
-      <Name>OZGNet.WinFormControls</Name>
     </ProjectReference>
     <ProjectReference Include="..\OZGNet.WinForm\OZGNet.WinForm.csproj">
       <Project>{60624138-8519-4084-8FE5-D6D62D27D49F}</Project>
