@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OZGNet.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:OZGNet.Framework.NHibernateHelper">
+            <summary>
+            NHibernate数据访问类
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.#ctor">
+            <summary>
+            实例化NHibernateHelper
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.#ctor(System.String)">
+            <summary>
+            实例化NHibernateHelper
+            </summary>
+            <param name="_AssemblyName">程序集名称(DLL)</param>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            直接执行SQL语句
+            </summary>
+            <param name="sql"></param>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.ExecuteNonQueryTransaction(System.Collections.Generic.IList{System.String})">
+            <summary>
+            执行SQL语句(事务)
+            </summary>
+            <param name="sqls"></param>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.Add(System.Object)">
+            <summary>
+            添加数据
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.Delete(System.Object)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.Update(System.Object)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetList(System.String)">
+            <summary>
+            使用HQL获取数据列表
+            </summary>
+            <param name="hql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetList(System.String,System.Int32)">
+            <summary>
+            使用HQL获取数据列表(返回指定行)
+            </summary>
+            <param name="hql"></param>
+            <param name="top"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            使用HQL获取数据列表(分页)
+            </summary>
+            <param name="hql"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetModel(System.String,System.String)">
+            <summary>
+            返回单个实体对象
+            </summary>
+            <param name="table"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.ExecuteScalar(System.String,System.String,System.String)">
+            <summary>
+            返回第一行第一列
+            </summary>
+            <param name="table"></param>
+            <param name="func"></param>
+            <param name="fid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.ExecuteScalar(System.String,System.String,System.String,System.String)">
+            <summary>
+            返回第一行第一列(带查询条件)
+            </summary>
+            <param name="table"></param>
+            <param name="func"></param>
+            <param name="fid"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetIQuery(System.String)">
+            <summary>
+            返回IQuery(强类型需要用到)
+            </summary>
+            <param name="hql">HQL语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetIQuery(System.String,System.Int32)">
+            <summary>
+            返回IQuery(返回指定行)(强类型需要用到)
+            </summary>
+            <param name="hql">HQL语句</param>
+            <param name="top">返回数据的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.GetIQuery(System.String,System.Int32,System.Int32)">
+            <summary>
+            返回IQuery(分页)(强类型需要用到)
+            </summary>
+            <param name="hql">HQL语句</param>
+            <param name="pageIndex">当前页索引</param>
+            <param name="pageSize">每页显示记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateHelper.Close">
+            <summary>
+            关闭ISession
+            </summary>
+        </member>
+        <member name="P:OZGNet.Framework.NHibernateHelper.AssemblyName">
+            <summary>
+            获取或设置程序集名称(DLL)
+            </summary>
+        </member>
+        <member name="T:OZGNet.Framework.NHibernateSessionFactoryFactory">
+            <summary>
+            NHibernateSessionFactoryFactory(依赖NHibernate.dll)
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateSessionFactoryFactory.GetCurrentSession">
+            <summary>
+            获取当前ISession
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateSessionFactoryFactory.CloseSession">
+            <summary>
+            关闭当前ISession
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.NHibernateSessionFactoryFactory.CloseSessionFactory">
+            <summary>
+            关闭当前ISessionFactory
+            </summary>
+        </member>
+        <member name="T:OZGNet.Framework.SpringDaoHelper">
+            <summary>
+            SpringDaoHelper数据访问类
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            直接执行SQL语句
+            </summary>
+            <param name="sql"></param>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.ExecuteNonQueryTransaction(System.Collections.Generic.List{System.String})">
+            <summary>
+            执行SQL语句(事务)
+            </summary>
+            <param name="sqls"></param>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.Add(System.Object)">
+            <summary>
+            添加数据
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.Delete(System.Object)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.Update(System.Object)">
+            <summary>
+            修改数据
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetList(System.String)">
+            <summary>
+            使用HQL获取数据列表
+            </summary>
+            <param name="hql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetList(System.String,System.Int32)">
+            <summary>
+            使用HQL获取数据列表(返回指定行)
+            </summary>
+            <param name="hql"></param>
+            <param name="top"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            使用HQL获取数据列表(分页)
+            </summary>
+            <param name="hql"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetModel(System.String,System.String)">
+            <summary>
+            返回单个实体对象
+            </summary>
+            <param name="table"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.ExecuteScalar(System.String,System.String,System.String)">
+            <summary>
+            返回第一行第一列
+            </summary>
+            <param name="table"></param>
+            <param name="func"></param>
+            <param name="fid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.ExecuteScalar(System.String,System.String,System.String,System.String)">
+            <summary>
+            返回第一行第一列(带查询条件)
+            </summary>
+            <param name="table"></param>
+            <param name="func"></param>
+            <param name="fid"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetIQuery(System.String)">
+            <summary>
+            返回IQuery(强类型需要用到)
+            </summary>
+            <param name="hql">HQL语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetIQuery(System.String,System.Int32)">
+            <summary>
+            返回IQuery(返回指定行)(强类型需要用到)
+            </summary>
+            <param name="hql">HQL语句</param>
+            <param name="top">返回数据的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.GetIQuery(System.String,System.Int32,System.Int32)">
+            <summary>
+            返回IQuery(分页)(强类型需要用到)
+            </summary>
+            <param name="hql">HQL语句</param>
+            <param name="pageIndex">当前页索引</param>
+            <param name="pageSize">每页显示记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringDaoHelper.CloseISession">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="P:OZGNet.Framework.SpringDaoHelper.Connection">
+            <summary>
+            获取数据库连接
+            </summary>
+        </member>
+        <member name="P:OZGNet.Framework.SpringDaoHelper.isession">
+            <summary>
+            获取ISession
+            </summary>
+        </member>
+        <member name="T:OZGNet.Framework.SpringHelper">
+            <summary>
+            Spring帮助类
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.SpringHelper.GetSpringBeanObject(System.String)">
+            <summary>
+            获取Spring.NET配置文件的objects节里面的object对象
+            </summary>
+            <param name="BeanID">指定ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringHelper.GetSpringBeanObject(System.String,System.String)">
+            <summary>
+            获取XML文件的objects节里面的object对象
+            </summary>
+            <param name="XmlPath">XML文件路径</param>
+            <param name="BeanID">指定ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:OZGNet.Framework.SpringSQLProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateCommand">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateCommandBuilder">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateConnection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateDataAdapter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateParameter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateParameterName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.CreateParameterNameForCollection(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.ExtractError(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Framework.SpringSQLProvider.IsDataAccessException(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.Framework.SpringSQLProvider.ConnectionString">
+            <summary>
+            获取或设置连接字符
+            </summary>
+        </member>
+        <member name="P:OZGNet.Framework.SpringSQLProvider.DbMetadata">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

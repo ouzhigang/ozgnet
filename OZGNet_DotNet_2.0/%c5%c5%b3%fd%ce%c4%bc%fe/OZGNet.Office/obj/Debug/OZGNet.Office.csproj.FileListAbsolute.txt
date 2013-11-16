@@ -1,0 +1,2 @@
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Office\obj\Debug\OZGNet.Office.csprojResolveAssemblyReference.cache
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Office\obj\Debug\OZGNet.Office.csproj.ResolveComReference.cache

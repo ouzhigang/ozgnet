@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OZGNet.Media</name>
+    </assembly>
+    <members>
+        <member name="T:OZGNet.Media.Asx.AsxFile">
+            <summary>
+            Asx帮助类
+            </summary>
+        </member>
+        <member name="M:OZGNet.Media.Asx.AsxFile.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            实例化AsxFile
+            </summary>
+            <param name="title">标题</param>
+            <param name="author">作者</param>
+            <param name="_abstract">提要</param>
+            <param name="copyright">版权</param>
+        </member>
+        <member name="M:OZGNet.Media.Asx.AsxFile.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.IList{OZGNet.Media.Asx.AsxModel})">
+            <summary>
+            实例化AsxFile
+            </summary>
+            <param name="title">标题</param>
+            <param name="author">作者</param>
+            <param name="_abstract">提要</param>
+            <param name="copyright">版权</param>
+            <param name="list">AsxModel列表</param>
+        </member>
+        <member name="M:OZGNet.Media.Asx.AsxFile.OutputContent">
+            <summary>
+            输出Asx内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxFile.Title">
+            <summary>
+            获取或设置标题
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxFile.Author">
+            <summary>
+            获取或设置作者
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxFile.Copyright">
+            <summary>
+            获取或设置版权
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxFile.Abstract">
+            <summary>
+            获取或设置提要
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxFile.AsxList">
+            <summary>
+            获取或设置AsxModel列表
+            </summary>
+        </member>
+        <member name="T:OZGNet.Media.Asx.AsxModel">
+            <summary>
+            Asx实体类
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxModel.Title">
+            <summary>
+            获取或设置标题
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxModel.Author">
+            <summary>
+            获取或设置作者
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxModel.Copyright">
+            <summary>
+            获取或设置版权
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxModel.URL">
+            <summary>
+            获取或设置URL
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxModel.Artist">
+            <summary>
+            获取或设置Artist
+            </summary>
+        </member>
+        <member name="P:OZGNet.Media.Asx.AsxModel.Album">
+            <summary>
+            获取或设置Album
+            </summary>
+        </member>
+    </members>
+</doc>

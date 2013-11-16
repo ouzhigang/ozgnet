@@ -1,0 +1,4 @@
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet\bin\Debug\OZGNet.XML
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet\bin\Debug\OZGNet.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet\obj\Debug\OZGNet.csproj.ResolveComReference.cache
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet\obj\Debug\OZGNet.dll

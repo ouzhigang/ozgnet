@@ -1,0 +1,6 @@
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.SysInfo\bin\Debug\OZGNet.SysInfo.XML
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.SysInfo\bin\Debug\OZGNet.SysInfo.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.SysInfo\bin\Debug\OZGNet.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.SysInfo\bin\Debug\OZGNet.xml
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.SysInfo\obj\Debug\OZGNet.SysInfo.csprojResolveAssemblyReference.cache
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.SysInfo\obj\Debug\OZGNet.SysInfo.dll

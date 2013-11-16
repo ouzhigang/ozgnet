@@ -1,0 +1,1702 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OZGNet</name>
+    </assembly>
+    <members>
+        <member name="T:OZGNet.Cash">
+            <summary>
+            数字转中文大写
+            </summary>
+        </member>
+        <member name="M:OZGNet.Cash.GetCash(System.Decimal)">
+            
+            
+            
+            <summary>
+            字符串替换方法，另外一种是以 4 个数字为基础的递归方法
+            Create By HJ 2007-10-21
+            </summary>
+            <param name="moneyNum">输入数字，如888.88M</param>
+            <returns></returns>
+        </member>
+        <member name="T:OZGNet.ChineseCalendarException">
+            <summary>
+            中国日历异常处理
+            </summary>
+        </member>
+        <member name="M:OZGNet.ChineseCalendarException.#ctor(System.String)">
+            <summary>
+            实例化ChineseCalendarException
+            </summary>
+            <param name="msg">错误信息</param>
+        </member>
+        <member name="T:OZGNet.ChineseCalendar">
+            <summary>
+            中国农历类 版本V1.0 支持 1900.1.31日起至 2049.12.31日止的数据
+            </summary>
+            <remarks>
+            本程序使用数据来源于网上的万年历查询，并综合了一些其它数据
+            </remarks>
+        </member>
+        <member name="F:OZGNet.ChineseCalendar.LunarDateArray">
+             <summary>
+             来源于网上的农历数据
+             </summary>
+             <remarks>
+             数据结构如下，共使用17位数据
+             第17位：表示闰月天数，0表示29天   1表示30天
+             第16位-第5位（共12位）表示12个月，其中第16位表示第一月，如果该月为30天则为1，29天为0
+             第4位-第1位（共4位）表示闰月是哪个月，如果当年没有闰月，则置0
+            </remarks>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.#ctor(System.DateTime)">
+            <summary>
+            用一个标准的公历日期来初使化
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            用农历的日期来初使化
+            </summary>
+            <param name="cy">农历年</param>
+            <param name="cm">农历月</param>
+            <param name="cd">农历日</param>
+            <param name="leapMonthFlag">闰月标志</param>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.GetChineseYearDays(System.Int32)">
+            <summary>
+            取农历年一年的天数
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.CheckDateLimit(System.DateTime)">
+            <summary>
+            检查公历日期是否符合要求
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.CheckChineseDateLimit(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            检查农历日期是否合理
+            </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <param name="day"></param>
+            <param name="leapMonth"></param>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.ConvertNumToChineseNum(System.Char)">
+            <summary>
+            将0-9转成汉字形式
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.BitTest32(System.Int32,System.Int32)">
+            <summary>
+            测试某位是否为真
+            </summary>
+            <param name="num"></param>
+            <param name="bitpostion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.ConvertDayOfWeek(System.DayOfWeek)">
+            <summary>
+            将星期几转成数字表示
+            </summary>
+            <param name="dayOfWeek"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.CompareWeekDayHoliday(System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            比较当天是不是指定的第周几
+            </summary>
+            <param name="date"></param>
+            <param name="month"></param>
+            <param name="week"></param>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.NextDay">
+            <summary>
+            取下一天
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.ChineseCalendar.PervDay">
+            <summary>
+            取前一天
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseCalendarHoliday">
+            <summary>
+            计算中国农历节日
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.WeekDayHoliday">
+            <summary>
+            按某月第几周第几日计算的节日
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.DateHoliday">
+            <summary>
+            按公历日计算的节日
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.Date">
+            <summary>
+            取对应的公历日期
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.WeekDay">
+            <summary>
+            取星期几
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.WeekDayStr">
+            <summary>
+            周几的字符
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.DateString">
+            <summary>
+            公历日期中文表示法 如一九九七年七月一日
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.IsLeapYear">
+            <summary>
+            当前是否公历闰年
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.IsChineseLeapMonth">
+            <summary>
+            是否闰月
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.IsChineseLeapYear">
+            <summary>
+            当年是否有闰月
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseDay">
+            <summary>
+            农历日
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseDayString">
+            <summary>
+            农历日中文表示
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseMonth">
+            <summary>
+            农历的月份
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseMonthString">
+            <summary>
+            农历月份字符串
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseYear">
+            <summary>
+            取农历年份
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseYearString">
+            <summary>
+            取农历年字符串如，一九九七年
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseDateString">
+            <summary>
+            取农历日期表示法：农历一九九七年正月初五
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.ChineseTwentyFourDay">
+            <summary>
+            定气法计算二十四节气,二十四节气是按地球公转来计算的，并非是阴历计算的
+            </summary>
+            <remarks>
+            节气的定法有两种。古代历法采用的称为"恒气"，即按时间把一年等分为24份，
+            每一节气平均得15天有余，所以又称"平气"。现代农历采用的称为"定气"，即
+            按地球在轨道上的位置为标准，一周360°，两节气之间相隔15°。由于冬至时地
+            球位于近日点附近，运动速度较快，因而太阳在黄道上移动15°的时间不到15天。
+            夏至前后的情况正好相反，太阳在黄道上移动较慢，一个节气达16天之多。采用
+            定气时可以保证春、秋两分必然在昼夜平分的那两天。
+            </remarks>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.Constellation">
+            <summary>
+            计算指定日期的星座序号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.Animal">
+            <summary>
+            计算属相的索引，注意虽然属相是以农历年来区别的，但是目前在实际使用中是按公历来计算的
+            鼠年为1,其它类推
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.AnimalString">
+            <summary>
+            取属相字符串
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.GanZhiYearString">
+            <summary>
+            取农历年的干支表示法如 乙丑年
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.GanZhiMonthString">
+            <summary>
+            取干支的月表示字符串，注意农历的闰月不记干支
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.GanZhiDayString">
+            <summary>
+            取干支日表示法
+            </summary>
+        </member>
+        <member name="P:OZGNet.ChineseCalendar.GanZhiDateString">
+            <summary>
+            取当前日期的干支表示法如 甲子年乙丑月丙庚日
+            </summary>
+        </member>
+        <member name="T:OZGNet.CoderPinyin">
+            <summary>
+            汉字转拼音类
+            </summary>
+        </member>
+        <member name="F:OZGNet.CoderPinyin.pyValue">
+            <summary>
+            定义拼音区编码数组
+            </summary>
+        </member>
+        <member name="F:OZGNet.CoderPinyin.pyName">
+            <summary>
+            定义数组
+            </summary>
+        </member>
+        <member name="M:OZGNet.CoderPinyin.Convert(System.String)">
+            <summary>
+            汉字转换
+            by http://www.crazycoder.cn/
+            </summary>
+            <param name="hzString">汉字字符串</param>
+            <returns>转换后的拼音(全拼)字符串</returns>
+        </member>
+        <member name="M:OZGNet.CoderPinyin.Convert(System.String,System.Int32)">
+            <summary>
+            把汉字转换成拼音(全拼)  by http://www.crazycoder.cn/
+            </summary>
+            <param name="hzString">汉字字符串</param>
+            <param name="maxLength"></param>
+            <returns>转换后的拼音(全拼)字符串</returns>
+        </member>
+        <member name="T:ConvertDateToChinese.DateToChinese">
+            <summary>
+            数字日期转中文日期
+            </summary>
+        </member>
+        <member name="T:OZGNet.Options.ShuiYinPicPoint">
+            <summary>
+            打水印图的位置
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.LeftTop">
+            <summary>
+            左上
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.MiddleTop">
+            <summary>
+            中上
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.RightTop">
+            <summary>
+            右上
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.LeftMiddle">
+            <summary>
+            左中
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.Middle">
+            <summary>
+            中间
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.RightMiddle">
+            <summary>
+            右中
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.LeftDown">
+            <summary>
+            左下
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.MiddleDown">
+            <summary>
+            中下
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.ShuiYinPicPoint.RightDown">
+            <summary>
+            右下
+            </summary>
+        </member>
+        <member name="T:OZGNet.Utility">
+            <summary>
+            WinForm和WebForm的工具类(WinForm和WebForm下面已使用)
+            </summary>
+        </member>
+        <member name="M:OZGNet.Utility.StringAt(System.String,System.Int32)">
+            <summary>
+            取指定字符
+            </summary>
+            <param name="str">目标字符</param>
+            <param name="i">字符索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ArrayListMerger(System.Collections.Generic.List{System.Collections.ArrayList})">
+            <summary>
+            合并ArrayList
+            </summary>
+            <param name="list">ArrayList的List</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetStartToEndString(System.String,System.String,System.String)">
+            <summary>
+            取开始到结束的值
+            </summary>
+            <param name="content">目标字符</param>
+            <param name="start">开始字符</param>
+            <param name="end">结束字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.StrSplit(System.String)">
+            <summary>
+            字符转List(针对每个字符)
+            </summary>
+            <param name="str">目标字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.StrSplit(System.String,System.String)">
+            <summary>
+            字符转List
+            </summary>
+            <param name="str">目标字符</param>
+            <param name="separator">分隔符</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.PageList(System.Collections.ArrayList,System.Int32,System.Int32)">
+            <summary>
+            ArrayList分页
+            </summary>
+            <param name="dataList">目标数据</param>
+            <param name="pageIndex">当前页索引</param>
+            <param name="pageSize">每页显示记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.PageCount(System.Int32,System.Int32)">
+            <summary>
+            获取总页数
+            </summary>
+            <param name="count">总记录数</param>
+            <param name="pageSize">每页显示记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.IEnumerableToList(System.Collections.IEnumerable)">
+            <summary>
+            IEnumerable转换为ArrayList
+            </summary>
+            <param name="ie">目标IEnumerable(这个类无泛型)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.IEnumeratorToList(System.Collections.IEnumerator)">
+            <summary>
+            IEnumerator转换为ArrayList
+            </summary>
+            <param name="ie">目标IEnumerator</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.IEnumeratorToList(System.Collections.Generic.IEnumerator{System.Object})">
+            <summary>
+            IEnumerator转换为ArrayList
+            </summary>
+            <param name="ie">目标IEnumerator(泛型)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetIPData(System.String,System.String)">
+            <summary>
+            读取纯真IP数据库
+            </summary>
+            <param name="ip">目标IP</param>
+            <param name="allFilePath">数据库路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetRandArrayList(System.Collections.ArrayList,System.Int32)">
+            <summary>
+            获取随机ArrayList(超过长度的话)
+            </summary>
+            <param name="aList">目标ArrayList</param>
+            <param name="_length">返回长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetRandIndex(System.Int32)">
+            <summary>
+            生成无重复索引
+            </summary>
+            <param name="_count">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetRandString(OZGNet.Options.RandString,System.Int32)">
+            <summary>
+            获取随机字符
+            </summary>
+            <param name="type">返回类型(1-7)</param>
+            <param name="_length">字符长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToMail(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            发送E-Mail
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMail">目标Email</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToMail(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            发送E-Mail
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="useSSL">使用SSL</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMail">目标Email</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToMail(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送E-Mail(支持群发)
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToMail(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送E-Mail(支持群发)
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="useSSL">使用SSL</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.SmtpMail(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送E-Mail 私有方法(支持群发)
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com:25)</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.SmtpMail(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送E-Mail 私有方法(支持群发)
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com:25)</param>
+            <param name="useSSL">使用SSL</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.DoToMail(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            发送E-Mail
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMail">目标Email</param>
+        </member>
+        <member name="M:OZGNet.Utility.DoToMail(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            发送E-Mail
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="useSSL">使用SSL</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMail">目标Email</param>
+        </member>
+        <member name="M:OZGNet.Utility.DoToMail(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送E-Mail(支持群发)
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+        </member>
+        <member name="M:OZGNet.Utility.DoToMail(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送E-Mail(支持群发)
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com)</param>
+            <param name="useSSL">使用SSL</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+        </member>
+        <member name="M:OZGNet.Utility.DoSmtpMail(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送Email（这个方法没有返回bool，能获取错误信息）
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com:25)</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+        </member>
+        <member name="M:OZGNet.Utility.DoSmtpMail(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            发送Email（这个方法没有返回bool，能获取错误信息）
+            </summary>
+            <param name="email">Email地址(不用输入用户)</param>
+            <param name="pwd">密码</param>
+            <param name="smtp">smtp服务器(smtp.163.com:25)</param>
+            <param name="useSSL">使用SSL</param>
+            <param name="title">邮件标题</param>
+            <param name="content">邮件内容</param>
+            <param name="files">附件列表(泛型)</param>
+            <param name="toMails">目标Email(泛型)</param>
+        </member>
+        <member name="M:OZGNet.Utility.ToMD5(System.String)">
+            <summary>
+            使用md5算法
+            </summary>
+            <param name="str">目标字符串</param>
+            <returns>返回转换MD5后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToSHA1(System.String)">
+            <summary>
+            使用SHA1算法
+            </summary>
+            <param name="str">目标字符串</param>
+            <returns>返回转换shs1后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToSHA256(System.String)">
+            <summary>
+            使用SHA256算法
+            </summary>
+            <param name="str">目标字符串</param>
+            <returns>返回转换SHA256后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToSHA384(System.String)">
+            <summary>
+            使用SHA384算法
+            </summary>
+            <param name="str">目标字符串</param>
+            <returns>返回转换SHA384后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToSHA512(System.String)">
+            <summary>
+            使用SHA512算法
+            </summary>
+            <param name="str">目标字符串</param>
+            <returns>返回转换SHA512后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.StringEncrypTo(System.String)">
+            <summary>
+            加密方法
+            </summary>
+            <param name="Source">待加密的串</param>
+            <returns>经过加密的串</returns>
+        </member>
+        <member name="M:OZGNet.Utility.StringDecrypTo(System.String)">
+            <summary>
+            解密方法
+            </summary>
+            <param name="Source">待解密的串</param>
+            <returns>经过解密的串</returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetRandomTime(System.DateTime,System.DateTime)">
+            <summary>
+            得到随机日期
+            </summary>
+            <param name="time1">起始日期</param>
+            <param name="time2">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.StrLength(System.String)">
+            <summary>
+            得到字符串长度，一个汉字长度为2
+            </summary>
+            <param name="inputString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetTruncate(System.String,System.Int32)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="inputString">目标字符串</param>
+            <param name="len">长度</param>
+            <returns>返回截取后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetTruncate(System.String,System.Int32,System.String)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="inputString">目标字符串</param>
+            <param name="len">长度</param>
+            <param name="Omission">省略号</param>
+            <returns>返回截取后的字符</returns>
+        </member>
+        <member name="M:OZGNet.Utility.StrLenValid(System.Collections.Generic.IList{System.String},System.Int32)">
+            <summary>
+            验证一组字符的长度
+            </summary>
+            <param name="str_list">字符列表</param>
+            <param name="len">限制长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ExecuteCMD(System.String)">
+            <summary>
+            执行CMD
+            </summary>
+            <param name="cmd">命令参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ExecuteApplication(System.String,System.String)">
+            <summary>
+            执行程序(马上执行)
+            </summary>
+            <param name="ApplicationPath">程序路径</param>
+            <param name="Arguments">命令参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ExecuteApplication(System.String,System.String,System.Boolean)">
+            <summary>
+            执行程序
+            </summary>
+            <param name="ApplicationPath">程序路径</param>
+            <param name="Arguments">命令参数</param>
+            <param name="IsStart">是否马上执行</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.Execute(System.String,System.String)">
+            <summary>
+            执行程序 (私有方法)
+            </summary>
+            <param name="ApplicationPath">本地程序路径</param>
+            <param name="Arguments">命令参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToQQHash(System.String)">
+            <summary>
+            QQ MD5加密
+            </summary>
+            <param name="str">目标字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.DataTableMerger(System.Data.DataTableCollection,System.String)">
+            <summary>
+            合并DataTable(每个表的结构必须一样)
+            </summary>
+            <param name="dataTables">DataTable集合</param>
+            <param name="sort">排序(id desc)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.DataTableMerger(System.Data.DataTableCollection,System.String,System.Int32)">
+            <summary>
+            合并DataTable(每个表的结构必须一样)
+            </summary>
+            <param name="dataTables">DataTable集合</param>
+            <param name="sort">排序(id desc)</param>
+            <param name="top">显示前几个</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.DataTablePage(System.Data.DataTable,System.Int32,System.Int32)">
+            <summary>
+            DataTable分页
+            </summary>
+            <param name="srcDataTable">源DataTable</param>
+            <param name="pageIndex">当前页</param>
+            <param name="pageSize">每页显示记录</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.DataTableWhere(System.Data.DataTable,System.String)">
+            <summary>
+            DataTable条件查询
+            </summary>
+            <param name="srcDataTable">源DataTable</param>
+            <param name="where">条件查询(id=1)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToBIG(System.String)">
+            <summary>
+            转繁体
+            </summary>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ToGB(System.String)">
+            <summary>
+            转简体
+            </summary>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ObjectSerializeForString(System.Object)">
+            <summary>
+            Base64序列化对象(String方式)
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ObjectDeserializeForString(System.String)">
+            <summary>
+            Base64反序列化对象(String方式)
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ObjectSerializeForBytes(System.Object)">
+            <summary>
+            序列化对象(byte[]方式)
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ObjectDeserializeForBytes(System.Byte[])">
+            <summary>
+            反序列化对象(byte[]方式)
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ObjectInstance(System.Type)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="type">类型的Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.DateRndName(System.Random)">
+            <summary>
+            日期随机函数
+            </summary>
+            <param name="ra">随机数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.Get2BitDouble(System.Double)">
+            <summary>
+            获取2位小数的Double
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetProportionHeight(System.Drawing.Size,System.Int32)">
+            <summary>
+            输入新的宽度，然后按比例计算高度
+            </summary>
+            <param name="srcSize">源大小</param>
+            <param name="newWidth">新的宽度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetProportionWidth(System.Drawing.Size,System.Int32)">
+            <summary>
+            输入新的高度，然后按比例计算宽度
+            </summary>
+            <param name="srcSize">源大小</param>
+            <param name="newHeight">新的高度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetBasePath">
+            <summary>
+            获取应用程序的根目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetLunarCalendar(System.DateTime)">
+            <summary>
+            获取对应日期的农历 (格式:二零零八年,鼠年,戊子,腊月,初十 )
+            </summary>
+            <param name="dtDay">公历日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.IntToChinese(System.Int32)">
+            <summary>
+            多个数字转为中文形式
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ShortToChinese(System.Int16)">
+            <summary>
+            一个数字转为中文形式
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetDotNetOSName">
+            <summary>
+            获取当前执行的.Net运行在哪个操作系统 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetOSRootDir">
+            <summary>
+            获取系统目录路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetOSProgramFilesDir">
+            <summary>
+            获取系统ProgramFiles路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetDotNetLanguage">
+            <summary>
+            获取.Net语言版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetDateMessge(System.DateTime)">
+            <summary>
+            返回时间提醒语
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ExistsPython">
+            <summary>
+            检测系统是否装有Python
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetPythonVersion">
+            <summary>
+            获取系统的Python版本号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetPerlVersion">
+            <summary>
+            获取系统的Perl版本号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ExistsPerl">
+            <summary>
+            检测系统是否装有Perl
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetJavaVersion">
+            <summary>
+            获取Java版本号,先使用CLASSPATH获取JDK的路径，然后读取java.exe的版本号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ExistsJava">
+            <summary>
+            检测系统是否安装有JAVA
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetPHPVersion">
+            <summary>
+            获取PHP版本,使用php.ini读取文件，然后读取php.exe来获取版本号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.IntMin(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            获取int数组里面的最小数值
+            </summary>
+            <param name="intList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.IntMax(System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            获取int数组里面的最大数值
+            </summary>
+            <param name="intList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetPercentage(System.Int64,System.Int64)">
+            <summary>
+            计算百分比
+            </summary>
+            <param name="Current">当前进度</param>
+            <param name="Max">最大值</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.MergerBytes(System.Byte[],System.Byte[])">
+            <summary>
+            合并二进制数据
+            </summary>
+            <param name="current"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.MergerBytes(System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            合并二进制数据
+            </summary>
+            <param name="BytesList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetDriversID">
+            <summary>
+            获取硬盘序列号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetRadian(System.Double)">
+            <summary>
+            输入角度，然后计算弧度，公式是：弧度=角度*Math.PI/180
+            </summary>
+            <param name="Angle">输入角度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetAngle(System.Double)">
+            <summary>
+            输入弧度，然后计算角度，公式是：角度=弧度*180/Math.PI
+            </summary>
+            <param name="Radian">输入弧度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ReplaceEx(System.String,System.String,System.String)">
+            <summary>
+            不区分大小写的替换
+            </summary>
+            <param name="original">原字符串</param>
+            <param name="pattern">需替换字符</param>
+            <param name="replacement">被替换内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.HtmlEncode(System.String)">
+            <summary>
+            替换html中的特殊字符
+            </summary>
+            <param name="theString">需要进行替换的文本。</param>
+            <returns>替换完的文本。</returns>
+        </member>
+        <member name="M:OZGNet.Utility.HtmlDecode(System.String)">
+            <summary>
+            恢复html中的特殊字符
+            </summary>
+            <param name="theString">需要恢复的文本。</param>
+            <returns>恢复好的文本。</returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetIP2Long(System.Net.IPAddress)">
+            <summary>
+            将IP地址转为整数形式
+            </summary>
+            <returns>整数</returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetLong2IP(System.Int64)">
+            <summary>
+            将整数转为IP地址
+            </summary>
+            <returns>IP地址</returns>
+        </member>
+        <member name="M:OZGNet.Utility.StrToUnicode(System.String)">
+            <summary>
+            字符转Unicode
+            </summary>
+            <param name="str">输入字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.UnicodeToStr(System.String)">
+            <summary>
+            Unicode转字符
+            </summary>
+            <param name="str">输入字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetNetCardMacAddress">
+            <summary>
+            获取MAC地址 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetDiskVolumeSerialNumber">
+            <summary>
+            获取硬盘(C盘)序列号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetDiskVolumeSerialNumber(System.String)">
+            <summary>
+            获取硬盘序列号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.UnixTimeFrom(System.Int64)">
+            <summary>
+            时间戳转DateTime
+            </summary>
+            <param name="timeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.UnixTimeTo(System.DateTime)">
+            <summary>
+            DateTime转时间戳
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.CloneOf``1(``0)">
+            <summary>
+            复制对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="serializableObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.GetPrivateString(System.String,System.Int32,System.Int32)">
+            <summary>
+            敏感字符字符转换（450821198506010034转450821********0034）
+            </summary>
+            <param name="number"></param>
+            <param name="start"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ArrayToString(System.Array)">
+            <summary>
+            数组转成字符串(用，隔开)
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Utility.ArrayToString(System.Array,System.String)">
+            <summary>
+            数组转成字符串
+            </summary>
+            <param name="list"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OZGNet.UtilityIO">
+            <summary>
+            Winform和Webform的IO工具类(WinForm和WebForm下面已使用)
+            </summary>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FileRead(System.String,System.String)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="file_path">目标文件</param>
+            <param name="encoding">文件编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FileWrite(System.String,System.String,System.String)">
+            <summary>
+            写入文件
+            </summary>
+            <param name="file_path">目标路径</param>
+            <param name="content">写入内容</param>
+            <param name="encoding">文件编码</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FileDelete(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="file_path">目标文件</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FileDeleteInDir(System.String)">
+            <summary>
+            删除该目录下的所有文件
+            </summary>
+            <param name="dir_path">目录路径</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FileDeleteInDir(System.String,System.String)">
+            <summary>
+            删除该目录下的指定文件
+            </summary>
+            <param name="dir_path">目录路径</param>
+            <param name="separator">分隔符,此字符存在这个文件名则删除</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.DirDelete(System.String,System.Boolean)">
+            <summary>
+            删除文件夹
+            </summary>
+            <param name="dir_path">目标文件夹</param>
+            <param name="recursive">是否清空目标文件夹的文件和文件夹</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.CopyDirectory(System.String,System.String)">
+            <summary>
+            复制文件夹和该文件夹下的所有内容到新的目录
+            </summary>
+            <param name="srcPath">文件夹源路径</param>
+            <param name="aimPath">目标路径</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.ReNameDirectory(System.String,System.String)">
+            <summary>
+            重命名文件夹
+            </summary>
+            <param name="srcPath">源文件夹路径</param>
+            <param name="newName">新文件夹名</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.ReNameFile(System.String,System.String)">
+            <summary>
+            重命名文件
+            </summary>
+            <param name="srcPath">源文件路径</param>
+            <param name="newName">新文件名</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.ChangeFLV(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            转换FLV
+            </summary>
+            <param name="ffmpeg">ffmpeg的路径</param>
+            <param name="input">输入视频路径</param>
+            <param name="output">输出FLV路径</param>
+            <param name="width">FLV的宽</param>
+            <param name="height">FLV的高</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.VideoCreateIMG(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            取视频其中的一帧然后生成图片
+            </summary>
+            <param name="ffmpeg">ffmpeg的路径</param>
+            <param name="video_path">输入视频路径</param>
+            <param name="outputIMG">输出图片路径</param>
+            <param name="width">图片宽</param>
+            <param name="height">图片高</param>
+            <param name="ss">截取视频图片的当前秒</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.CopyFile(System.String,System.String,System.Int32)">
+            <summary>
+            复制大文件
+            </summary>
+            <param name="fromFile">要复制的文件</param>
+            <param name="toFile">要保存的位置</param>
+            <param name="lengthEachTime">每次复制的长度(单位为字节)</param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.SaveImageFromWeb(System.String,System.String)">
+            <summary>
+            保存远程图片函数
+            </summary>
+            <param name="imgUrl">目标URL图片</param>
+            <param name="path">保存路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FO_StreamToBytes(System.IO.Stream)">
+            <summary>
+            将 Stream 转成 byte[] 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FO_BytesToStream(System.Byte[])">
+            <summary>
+            将 byte[] 转成 Stream
+            </summary>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FO_StreamToFile(System.IO.Stream,System.String)">
+            <summary>
+            将 Stream 写入文件 
+            </summary>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FO_FileToStream(System.String)">
+            <summary>
+            从文件读取 Stream
+            </summary>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FO_ReadFile(System.String)">
+            <summary>
+            读取文件的byte[]
+            </summary>
+        </member>
+        <member name="M:OZGNet.UtilityIO.FO_WriteFile(System.Byte[],System.String)">
+            <summary>
+            用byte[]的方式写入文件
+            </summary>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetDirectoryLength(System.String)">
+            <summary>
+            获取一个文件夹的大小,单位为字节
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetSize(System.Int64)">
+            <summary>
+            统计空间大小的单位
+            </summary>
+            <param name="by">字节</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetSize(System.Int32)">
+            <summary>
+            统计空间大小的单位
+            </summary>
+            <param name="kb">KB</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetFileInfoList(System.String)">
+            <summary>
+            获取一个目录的所有FileInfo
+            </summary>
+            <param name="dirpath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetFileInfoList(System.String,System.Collections.Generic.IList{System.IO.FileInfo})">
+            <summary>
+            获取一个目录的所有FileInfo(私有方法)
+            </summary>
+            <param name="dirpath"></param>
+            <param name="fileList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetDirInfoList(System.String)">
+            <summary>
+            获取一个目录的所有DirectoryInfo
+            </summary>
+            <param name="dirpath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.GetDirInfoList(System.String,System.Collections.Generic.IList{System.IO.DirectoryInfo})">
+            <summary>
+            获取一个目录的所有DirectoryInfo(私有方法)
+            </summary>
+            <param name="dirpath"></param>
+            <param name="dirList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.UtilityIO.BitmapSaveToStream(System.Drawing.Bitmap,System.IO.Stream,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Bitmap保存到流中出错的解决方法
+            </summary>
+            <param name="bmp"></param>
+            <param name="stream"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:OZGNet.UtilityIO.ReplaceContent(System.String,System.Collections.Hashtable)">
+            <summary>
+            替换字符
+            </summary>
+            <param name="source">源字符</param>
+            <param name="ht">替换内容</param>
+            <returns></returns>
+        </member>
+        <member name="T:OZGNet.DateTimeUtils">
+            <summary>
+            时间帮助工具类
+            </summary>
+        </member>
+        <member name="M:OZGNet.DateTimeUtils.DateStringFromNow(System.DateTime)">
+            
+            <summary>
+            根据时间返回几个月前,几天前,几小时前,几分钟前,几秒前
+            </summary>
+            <param name="dt">输入日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.DateTimeUtils.DateDiff(System.DateTime,System.DateTime)">
+            
+            <summary>
+            计算两个时间的差值,返回的是x天x小时x分钟x秒
+            </summary>
+            <param name="DateTime1">输入日期1</param>
+            <param name="DateTime2">输入日期2</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.DateTimeUtils.DateDiff(System.DateTime,System.DateTime,System.Boolean)">
+            
+            <summary>
+            时间相差值,返回时间差
+            调用时,isTotal为true时,返回的时带小数的天数,否则返回的是整数
+            </summary>
+            <param name="DateTime1">输入日期1</param>
+            <param name="DateTime2">输入日期2</param>
+            <param name="isTotal">isTotal为true时,返回的时带小数的天数,否则返回的是整数</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.DateTimeUtils.CompareDate(System.String,System.String,System.Int32)">
+            
+            <summary>
+            日期比较
+            </summary>
+            <param name="today">当前日期</param>
+            <param name="writeDate">输入日期</param>
+            <param name="n">比较天数</param>
+            <returns>大于天数返回true，小于返回false</returns>
+        </member>
+        <member name="M:OZGNet.DateTimeUtils.WhichDay(System.String)">
+            
+            <summary>
+            根据英文的星期几返回中文的星期几
+            如WhichDay("Sunday"),返回星期日
+            </summary>
+            <param name="enWeek">输入：Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.DateTimeUtils.GetBirthdayTip(System.DateTime)">
+            
+            <summary>
+            根据出生年月进行生日提醒
+            </summary>
+            <param name="birthday">输入生日日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.GetIPData.GetIP">
+            <summary>
+            查询IP地址
+            </summary>
+            <returns>返回IP地址</returns>
+        </member>
+        <member name="M:OZGNet.GetIPData.GetIP(System.String,System.String)">
+            <summary>
+            查询IP地址
+            </summary>
+            <param name="dataPath">IP数据库路径</param>
+            <param name="ip">目标IP地址</param>
+            <returns>返回IP地址</returns>
+        </member>
+        <member name="T:OZGNet.IniFile">
+              <summary>
+              读写ini文件的类
+              调用kernel32.dll中的两个api：WritePrivateProfileString，GetPrivateProfileString来实现对ini  文件的读写。
+            
+              INI文件是文本文件,
+              由若干节(section)组成,
+              在每个带括号的标题下面,
+              是若干个关键词(key)及其对应的值(value)
+              
+            [Section]
+            Key=value
+            
+              </summary>
+        </member>
+        <member name="F:OZGNet.IniFile.FilePath">
+             <summary>
+             ini文件名称（带路径)
+             </summary>
+        </member>
+        <member name="M:OZGNet.IniFile.#ctor(System.String)">
+             <summary>
+             类的构造函数
+             </summary>
+             <param  name="INIPath">INI文件名</param>  
+        </member>
+        <member name="M:OZGNet.IniFile.WriteInivalue(System.String,System.String,System.String)">
+             <summary>
+              写INI文件
+             </summary>
+             <param  name="Section">Section</param>
+             <param  name="Key">Key</param>
+             <param  name="value">value</param>
+        </member>
+        <member name="M:OZGNet.IniFile.ReadInivalue(System.String,System.String)">
+             <summary>
+               读取INI文件指定部分
+             </summary>
+             <param  name="Section">Section</param>
+             <param  name="Key">Key</param>
+             <returns>String</returns>  
+        </member>
+        <member name="T:OZGNet.Options.Charset">
+            <summary>
+            字符编码
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.GB2312">
+            <summary>
+            GB2312编码(简体中文)
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.GBK">
+            <summary>
+            GBK编码(简体中文)
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.Big5">
+            <summary>
+            Big5编码(繁体中文)
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.UTF7">
+            <summary>
+            UTF-7编码
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.UTF8">
+            <summary>
+            UTF-8编码
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.UTF32">
+            <summary>
+            UTF-32编码
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.Shift_JIS">
+            <summary>
+            Shift_JIS编码（日文）
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.JIS">
+            <summary>
+            JIS编码（日文）
+            </summary>
+        </member>
+        <member name="P:OZGNet.Options.Charset.EUC">
+            <summary>
+            EUC编码（日文）
+            </summary>
+        </member>
+        <member name="T:OZGNet.Options.RandString">
+            <summary>
+            枚举(获取随机字符Util.GetRandString())
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.Lower">
+            <summary>
+            全部小写字母
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.Upper">
+            <summary>
+            全部大写字母
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.Number">
+            <summary>
+            全部数字
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.LowerAndUpper">
+            <summary>
+            大写字母和小写字母
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.UpperAndNumber">
+            <summary>
+            大写字母和数字
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.LowerAndNumber">
+            <summary>
+            小写字母和数字
+            </summary>
+        </member>
+        <member name="F:OZGNet.Options.RandString.All">
+            <summary>
+            大写字母,小写字母和数字
+            </summary>
+        </member>
+        <member name="T:OZGNet.QQHash">
+            <summary>
+            QQ编码加密类
+            </summary>
+        </member>
+        <member name="M:OZGNet.QQHash.PwdHash(System.String)">
+            <summary>
+            通过MD5加密后返回加密后的BASE64密码
+            </summary>
+            <param name="pwd">要加密的内容</param>
+            <returns>通过MD5加密后返回加密后的BASE64密码</returns>
+        </member>
+        <member name="M:OZGNet.QQHash.StringToMD5Hash(System.String)">
+            <summary>
+            返回MD5的32位加密后的密码
+            </summary>
+            <param name="inputString">要加密的内容</param>
+            <returns>加密后的结果</returns>
+        </member>
+        <member name="M:OZGNet.QQHash.EncodeBase64(System.String)">
+            <summary>
+            Base64编码
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.QQHash.DecodeBase64(System.String,System.String)">
+            <summary>
+            Base64解码
+            </summary>
+            <param name="code_type"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OZGNet.SymmetricMethod">
+            <summary>
+            C#可逆加密-Rijndael算法
+            </summary>
+        </member>
+        <member name="M:OZGNet.SymmetricMethod.#ctor">
+            <summary>
+            对称加密类的构造函数
+            </summary>
+        </member>
+        <member name="M:OZGNet.SymmetricMethod.GetLegalKey">
+            <summary>
+            获得密钥
+            </summary>
+            <returns>密钥</returns>
+        </member>
+        <member name="M:OZGNet.SymmetricMethod.GetLegalIV">
+            <summary>
+            获得初始向量IV
+            </summary>
+            <returns>初试向量IV</returns>
+        </member>
+        <member name="M:OZGNet.SymmetricMethod.Encrypto(System.String)">
+            <summary>
+            加密方法
+            </summary>
+            <param name="Source">待加密的串</param>
+            <returns>经过加密的串</returns>
+        </member>
+        <member name="M:OZGNet.SymmetricMethod.Decrypto(System.String)">
+            <summary>
+            解密方法
+            </summary>
+            <param name="Source">待解密的串</param>
+            <returns>经过解密的串</returns>
+        </member>
+        <member name="T:OZGNet.Validate">
+            <summary>
+            页面数据校验类
+            李天平
+            2004.8
+            </summary>
+        </member>
+        <member name="M:OZGNet.Validate.FetchInputDigit(System.Web.HttpRequest,System.String,System.Int32)">
+            <summary>
+            检查Request查询字符串的键值，是否是数字，最大长度限制
+            </summary>
+            <param name="req">Request</param>
+            <param name="inputKey">Request的键值</param>
+            <param name="maxLen">最大长度</param>
+            <returns>返回Request查询字符串</returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsNumber(System.String)">
+            <summary>
+            是否数字字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsNumberSign(System.String)">
+            <summary>
+            是否数字字符串可带正负号
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsDecimal(System.String)">
+            <summary>
+            是否是浮点数
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsDecimalSign(System.String)">
+            <summary>
+            是否是浮点数可带正负号
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsHasCHZN(System.String)">
+            <summary>
+            检测是否有中文字符
+            </summary>
+            <param name="inputData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsEmail(System.String)">
+            <summary>
+            是否是浮点数可带正负号
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsSmallDate(System.String)">
+            <summary>
+            验证日期格式(yyyy-MM-dd)
+            </summary>
+            <param name="inputData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.IsIPAddress(System.String)">
+            <summary>
+            验证IP地址
+            </summary>
+            <param name="inputData">IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.SqlText(System.String,System.Int32)">
+            <summary>
+            检查字符串最大长度，返回指定长度的串
+            </summary>
+            <param name="sqlInput">输入字符串</param>
+            <param name="maxLength">最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.Validate.HtmlEncode(System.String)">
+            <summary>
+            字符串编码
+            </summary>
+            <param name="inputData"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

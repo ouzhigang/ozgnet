@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OZGNet.Serialize</name>
+    </assembly>
+    <members>
+        <member name="T:OZGNet.Serialize.BinarySerialize">
+            <summary>
+            二进制序列化
+            </summary>
+        </member>
+        <member name="T:OZGNet.Serialize.ISerialize">
+            <summary>
+            序列化接口
+            </summary>
+        </member>
+        <member name="M:OZGNet.Serialize.ISerialize.Serialize(System.Object)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OZGNet.Serialize.ISerialize.DeSerialize">
+            <summary>
+            反序列化对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.Serialize.ISerialize.FilePath">
+            <summary>
+            获取或设置文件的路径
+            </summary>
+        </member>
+        <member name="M:OZGNet.Serialize.BinarySerialize.#ctor">
+            <summary>
+            实例化BinarySerialize
+            </summary>
+        </member>
+        <member name="M:OZGNet.Serialize.BinarySerialize.#ctor(System.String)">
+            <summary>
+            实例化BinarySerialize
+            </summary>
+            <param name="FilePath">文件的路径</param>
+        </member>
+        <member name="M:OZGNet.Serialize.BinarySerialize.Serialize(System.Object)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OZGNet.Serialize.BinarySerialize.DeSerialize">
+            <summary>
+            反序列化对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.Serialize.BinarySerialize.FilePath">
+            <summary>
+            获取或设置文件的路径
+            </summary>
+        </member>
+        <member name="T:OZGNet.Serialize.SoapSerialize">
+            <summary>
+            Soap序列化
+            </summary>
+        </member>
+        <member name="M:OZGNet.Serialize.SoapSerialize.#ctor">
+            <summary>
+            实例化SoapSerialize
+            </summary>
+        </member>
+        <member name="M:OZGNet.Serialize.SoapSerialize.#ctor(System.String)">
+            <summary>
+            实例化SoapSerialize
+            </summary>
+            <param name="FilePath">文件的路径</param>
+        </member>
+        <member name="M:OZGNet.Serialize.SoapSerialize.Serialize(System.Object)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OZGNet.Serialize.SoapSerialize.DeSerialize">
+            <summary>
+            反序列化对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.Serialize.SoapSerialize.FilePath">
+            <summary>
+            获取或设置文件的路径
+            </summary>
+        </member>
+    </members>
+</doc>

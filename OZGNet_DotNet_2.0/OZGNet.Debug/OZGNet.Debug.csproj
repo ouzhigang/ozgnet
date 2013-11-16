@@ -85,10 +85,6 @@
       <Project>{8C11E300-E84E-4085-BD41-0591CB38111B}</Project>
       <Name>OZGNet.Net</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OZGNet.Office\OZGNet.Office.csproj">
-      <Project>{6DD2B3D6-4947-4243-A390-52F794ED5261}</Project>
-      <Name>OZGNet.Office</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OZGNet.Serialize\OZGNet.Serialize.csproj">
       <Project>{F0F04103-82E9-41F9-8E63-BAC96394B9A1}</Project>
       <Name>OZGNet.Serialize</Name>

@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OZGNet.SysInfo</name>
+    </assembly>
+    <members>
+        <member name="T:OZGNet.SysInfo.CPU">
+            <summary>
+            获取CPU基本信息
+            </summary>
+        </member>
+        <member name="M:OZGNet.SysInfo.CPU.GetValue(System.String,System.String)">
+            <summary>
+            私有方法
+            </summary>
+            <param name="path"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.SysInfo.CPU.Identifiers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.CPU.ProcessorNames">
+            <summary>
+            获取CPU名称
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.CPU.VendorIdentifiers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.CPU.ProcessorCount">
+            <summary>
+            获取CPU个数
+            </summary>
+        </member>
+        <member name="T:OZGNet.SysInfo.HardWare">
+            <summary>
+            获取硬件信息
+            </summary>
+        </member>
+        <member name="M:OZGNet.SysInfo.HardWare.GetSystemInfo(OZGNet.SysInfo.HardWare.CPU_INFO@)">
+            <summary>
+            CPU实例
+            </summary>
+            <param name="cpuinfo"></param>
+        </member>
+        <member name="M:OZGNet.SysInfo.HardWare.GlobalMemoryStatus(OZGNet.SysInfo.HardWare.MEMORY_INFO@)">
+            <summary>
+            内存实例
+            </summary>
+            <param name="meminfo"></param>
+        </member>
+        <member name="T:OZGNet.SysInfo.HardWare.CPU_INFO">
+            <summary>
+            获取系统CPU信息
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwOemId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwPageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.lpMinimumApplicationAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.lpMaximumApplicationAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwActiveProcessorMask">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwNumberOfProcessors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwProcessorType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwAllocationGranularity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwProcessorLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.CPU_INFO.dwProcessorRevision">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OZGNet.SysInfo.HardWare.MEMORY_INFO">
+            <summary>
+            获取系统内存
+            HardWare.MEMORY_INFO info = new HardWare.MEMORY_INFO();
+            HardWare.GlobalMemoryStatus(ref info);
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwMemoryLoad">
+            <summary>
+            正在使用的内存,单位为百分比
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwTotalPhys">
+            <summary>
+            物理内存总数,单位为M   (dwTotalPhys / 0x100000)
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwAvailPhys">
+            <summary>
+            可用物理内存,单位为M   (dwAvailPhys / 0x100000)
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwTotalPageFile">
+            <summary>
+            交换文件大小,单位为M   (dwTotalPageFile / 0x100000)
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwAvailPageFile">
+            <summary>
+            交换文件可用大小,单位为M   (dwAvailPageFile / 0x100000)
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwTotalVirtual">
+            <summary>
+            总虚拟内存,单位为M      (dwTotalVirtual / 0x100000)
+            </summary>
+        </member>
+        <member name="F:OZGNet.SysInfo.HardWare.MEMORY_INFO.dwAvailVirtual">
+            <summary>
+            剩余虚拟内存,单位为M     (dwAvailVirtual / 0x100000)
+            </summary>
+        </member>
+        <member name="T:OZGNet.SysInfo.OS">
+            <summary>
+            获取操作系统当前版本信息
+            </summary>
+        </member>
+        <member name="M:OZGNet.SysInfo.OS.GetOdbcList">
+            <summary>
+            获取本机ODBC驱动列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OZGNet.SysInfo.OS.GetValue(System.String)">
+            <summary>
+            私有方法
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.BuildLab">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CommonFilesDir">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CSDBuildNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CSDVersion">
+            <summary>
+            获取Windows SP补丁信息
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CurrentBuild">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CurrentBuildNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CurrentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.CurrentVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.DevicePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.MediaPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.OldWinDir">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.OtherDevicePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.PathName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.ProductId">
+            <summary>
+            获取Windows ID
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.ProductName">
+            <summary>
+            获取Windows版本信息
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.ProgramFilesDir">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.RegDone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.RegisteredOrganization">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.RegisteredOwner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.SoftwareType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.SourcePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.SystemRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OZGNet.SysInfo.OS.WallPaperDir">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

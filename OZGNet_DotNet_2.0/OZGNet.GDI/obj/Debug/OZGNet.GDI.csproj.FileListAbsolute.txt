@@ -1,0 +1,11 @@
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\OZGNet.GDI.XML
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\OZGNet.GDI.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\Interop.ASPJPEGLib.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\OZGNet.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\OZGNet.Net.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\LumiSoft.Net.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\System.Net.Json.dll
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\OZGNet.Net.xml
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\bin\Debug\OZGNet.xml
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\obj\Debug\OZGNet.GDI.csprojResolveAssemblyReference.cache
+D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.GDI\obj\Debug\OZGNet.GDI.dll
