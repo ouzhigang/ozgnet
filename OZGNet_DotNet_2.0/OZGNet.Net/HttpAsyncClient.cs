@@ -74,7 +74,7 @@ namespace OZGNet.Net
                 this.Res = Res;
             }
 
-            public byte[] Results
+            public byte[] Result
             {
                 get
                 {
