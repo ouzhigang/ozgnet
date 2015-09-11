@@ -84,6 +84,7 @@
     <Compile Include="Geo.cs" />
     <Compile Include="GeoIP.cs" />
     <Compile Include="GooglePR.cs" />
+    <Compile Include="HttpAsyncClient.cs" />
     <Compile Include="MimeString.cs" />
     <Compile Include="NetSpider.cs" />
     <Compile Include="POP3Helper.cs" />

@@ -1,0 +1,9 @@
+*.sdf
+.vs/
+Release/
+tests/
+Debug/
+*.suo
+x64
+bin/
+obj/
