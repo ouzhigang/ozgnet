@@ -63,6 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncFileBase.cs" />
+    <Compile Include="AsyncFileCopy.cs" />
+    <Compile Include="AsyncFileRead.cs" />
     <Compile Include="Cash.cs" />
     <Compile Include="ChineseCalendar.cs" />
     <Compile Include="CoderPinyin.cs" />

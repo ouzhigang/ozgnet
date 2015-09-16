@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alexa.cs" />
+    <Compile Include="AsyncHttpClient.cs" />
     <Compile Include="BrowserUserAgentString.cs" />
     <Compile Include="EmailData\Gmail.cs" />
     <Compile Include="EmailData\IEmail.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Geo.cs" />
     <Compile Include="GeoIP.cs" />
     <Compile Include="GooglePR.cs" />
-    <Compile Include="HttpAsyncClient.cs" />
     <Compile Include="MimeString.cs" />
     <Compile Include="NetSpider.cs" />
     <Compile Include="POP3Helper.cs" />
