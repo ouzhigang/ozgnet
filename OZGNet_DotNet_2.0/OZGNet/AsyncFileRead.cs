@@ -39,7 +39,7 @@ using System.IO;
 */
 namespace OZGNet
 {
-	public class AsyncFileRead : AsyncFileBase
+	public class AsyncFileRead : AsyncBase
 	{
 		public class CompletedEventArgs : EventArgs
         {

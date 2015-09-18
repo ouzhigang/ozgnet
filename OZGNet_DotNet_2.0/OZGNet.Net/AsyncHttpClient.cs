@@ -41,7 +41,7 @@ using System.IO;
 
 namespace OZGNet.Net
 {
-    public class AsyncHttpClient : AsyncFileBase
+    public class AsyncHttpClient : AsyncBase
     {
         
         public class CompletedEventArgs : EventArgs

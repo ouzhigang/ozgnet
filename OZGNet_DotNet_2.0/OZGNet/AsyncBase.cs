@@ -6,7 +6,7 @@ using System.IO;
 
 namespace OZGNet
 {	
-	public abstract class AsyncFileBase
+	public abstract class AsyncBase
 	{
 		protected class WorkStatus
 		{

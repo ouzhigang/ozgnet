@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncFileBase.cs" />
+    <Compile Include="AsyncBase.cs" />
     <Compile Include="AsyncFileCopy.cs" />
     <Compile Include="AsyncFileRead.cs" />
     <Compile Include="Cash.cs" />
