@@ -131,7 +131,15 @@ namespace OZGNet.Net
 
         public override void Cancel()
         {
-            //暂无取消功能
+            try
+            {
+                this.HandleThread.Abort();
+                this.Request.Abort();
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 
