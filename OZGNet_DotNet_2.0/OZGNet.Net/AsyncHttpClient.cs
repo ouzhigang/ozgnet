@@ -6,6 +6,8 @@ using System.Threading;
 using System.IO;
 
 /*
+		需要支持cookie的话，加入ResponseHeadersEvent时间，然后e.Headers.Get("Set-Cookie")获得cookie数据，然后在下一次请求中加入对应的cookie到RequestHeaders，例如RequestHeaders.Add("Cookie", "PHPSESSID=q7ng2dja9kirktah0dv4hh16k6")
+
         private void Form1_Load(object sender, EventArgs e)
         {
             AsyncHttpClient Client = new AsyncHttpClient("http://news.163.com/");
