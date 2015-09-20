@@ -61,23 +61,43 @@ namespace OZGNet.Net
                 }
             }
         }
+
+        public class ResponseHeadersEventArgs : EventArgs
+        {
+            private WebHeaderCollection MHeaders;
+
+            public ResponseHeadersEventArgs(WebHeaderCollection Headers)
+            {
+                this.MHeaders = Headers;
+            }
+
+            public WebHeaderCollection Headers
+            {
+                get
+                {
+                    return this.MHeaders;
+                }
+            }
+        }
         
         private string Url;
         private string HttpMethod;
-        
-        private WebRequest Request;
 
-        public WebHeaderCollection Headers;
+        private HttpWebRequest Request;
+
+        public WebHeaderCollection RequestHeaders;
         public int Tag;
 
         //事件委托
         public delegate void StartedEventHandler(object sender, StartedEventArgs e);
+        public delegate void ResponseHeadersEventHandler(object sender, ResponseHeadersEventArgs e);
         public delegate void ProgressChangedEventHandler(object sender, ProgressChangedEventArgs e);
         public delegate void CompletedEventHandler(object sender, CompletedEventArgs e);
         public delegate void ErrorEventHandler(object sender, ErrorEventArgs e);
 
         //事件
         public event StartedEventHandler StartedEvent;
+        public event ResponseHeadersEventHandler ResponseHeadersEvent;
         public event ProgressChangedEventHandler ProgressChangedEvent;
         public event CompletedEventHandler CompletedEvent;
         public event ErrorEventHandler ErrorEvent;
@@ -102,16 +122,20 @@ namespace OZGNet.Net
         {
             this.SyncContext = SynchronizationContext.Current;
 
-            this.Request = WebRequest.Create(this.Url);
+            this.Request = (HttpWebRequest)WebRequest.Create(this.Url);
+
+            //用了headers写入cookie的话，这里就不需要了
+            //this.Request.CookieContainer = new CookieContainer();
+            //this.Request.CookieContainer.Add(new Cookie("PHPSESSID", "fclsdovsq5ba43ctuqibi4m5m6", "/", "localhost"));
 
             if (this.Request is HttpWebRequest)
             {
-                ((HttpWebRequest)this.Request).UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36";
+                this.Request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36";
 
             }
                         
             this.Request.Method = this.HttpMethod;
-            this.Headers = this.Request.Headers;
+            this.RequestHeaders = this.Request.Headers;
 
             this.ReadTotal = 0;
         }
@@ -163,7 +187,6 @@ namespace OZGNet.Net
         {
             try
             {
-
                 HttpWebRequest req = ((WorkStatus)ar.AsyncState).WorkObject as HttpWebRequest;
                 HttpWebResponse response = req.EndGetResponse(ar) as HttpWebResponse;
                 if (response.StatusCode != HttpStatusCode.OK)
@@ -171,7 +194,9 @@ namespace OZGNet.Net
                     response.Close();
                     return;
                 }
-                
+                                
+                this.SyncContext.Post(ResponseHeadersEventCallBack, response.Headers);
+
                 this.HandleStatus.WorkObject = response;
                 Stream repsonseStream = response.GetResponseStream();
                 this.HandleStatus.OtherObject.Add("OrginalStream", repsonseStream);
@@ -230,6 +255,12 @@ namespace OZGNet.Net
         {
             if (this.StartedEvent != null)
                 this.StartedEvent(this, new StartedEventArgs());
+        }
+
+        private void ResponseHeadersEventCallBack(object curr_data)
+        {
+            if (this.ResponseHeadersEvent != null)
+                this.ResponseHeadersEvent(this, new ResponseHeadersEventArgs((WebHeaderCollection)curr_data));
         }
 
         private void ProgressChangedEventCallBack(object curr_data)
