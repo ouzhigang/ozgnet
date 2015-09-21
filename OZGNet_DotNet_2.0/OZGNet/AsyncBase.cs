@@ -176,19 +176,19 @@ namespace OZGNet
         
         public class ErrorEventArgs : EventArgs
         {
-            private string Msg;
+            private Exception MError;
 
             public ErrorEventArgs(Exception ex)
             {
-                this.Msg = ex.Message;
+                this.MError = ex;
                 
             }
 
-            public string Message
+            public Exception Error
             {
                 get
                 {
-                    return this.Msg;
+                    return this.MError;
                 }
             }
 
