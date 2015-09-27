@@ -54,10 +54,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly\AspNetPager.dll</HintPath>
-    </Reference>
     <Reference Include="DDTek.Sybase, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c84cd5c63851e072, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assembly\DDTek.Sybase.dll</HintPath>
@@ -128,6 +124,7 @@
     <Compile Include="AR\Relation\ManyMany.cs" />
     <Compile Include="AR\Relation\OneMany.cs" />
     <Compile Include="AR\Relation\OneOne.cs" />
+    <Compile Include="AsyncDataAccess.cs" />
     <Compile Include="DB2Helper.cs" />
     <Compile Include="EntLibHelper\Options\SelectDB.cs" />
     <Compile Include="EntLibHelper\StoredProcedure.cs" />

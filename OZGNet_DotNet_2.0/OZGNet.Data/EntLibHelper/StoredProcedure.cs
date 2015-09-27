@@ -138,23 +138,6 @@ namespace OZGNet.Data.EntLibHelper
         }
         #endregion        
 
-        #region AspNetPager分页(存储过程DataReaer方式)
-        /// <summary>
-        /// AspNetPager分页(存储过程DataReaer方式)
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="storedProcedureName">存储过程</param>
-        /// <returns></returns>
-        public IDataReader AspNetPagerProcedure(Wuqi.Webdiyer.AspNetPager pager, string storedProcedureName)
-        {
-            Hashtable ht = new Hashtable();
-            ht.Add(new SqlParameter("@pageindex", pager.CurrentPageIndex), DbType.Int32);
-            ht.Add(new SqlParameter("@pagesize", pager.PageSize), DbType.Int32);
-            ht.Add(new SqlParameter("@docount", "0"), DbType.Int32);
-            return ExecuteReader(storedProcedureName, ht);
-        }
-        #endregion
-
         #region 返回单行数据
         /// <summary>
         /// 返回单行数据

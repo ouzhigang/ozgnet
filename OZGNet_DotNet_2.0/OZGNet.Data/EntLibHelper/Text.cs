@@ -73,9 +73,7 @@ namespace OZGNet.Data.EntLibHelper
             }
         } 
         #endregion
-
-
-
+        
         #region 返回第一行第一列
         /// <summary>
         /// 返回第一行第一列
@@ -217,21 +215,7 @@ namespace OZGNet.Data.EntLibHelper
             return ds;
         }
         #endregion
-
-        #region AspNetPager分页
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句</param>
-        /// <param name="tableName">表的名称</param>
-        /// <returns></returns>
-        public DataSet AspNetPager(Wuqi.Webdiyer.AspNetPager pager, string sql, string tableName)
-        {
-            return DataSet(sql, tableName, pager.CurrentPageIndex, pager.PageSize);
-        } 
-        #endregion
-
+        
         #region 返回单行数据
         /// <summary>
         /// 返回单行数据

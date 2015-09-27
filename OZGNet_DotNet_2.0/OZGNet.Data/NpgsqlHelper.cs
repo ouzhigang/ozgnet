@@ -400,67 +400,6 @@ namespace OZGNet.Data
                 return dataset;
             }
         }
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句</param>
-        /// <returns></returns>
-        public DataSet AspNetPager(Wuqi.Webdiyer.AspNetPager pager, string sql)
-        {
-            return AspNetPager(CommandType.Text, pager, sql, "SingleTable", null);
-        }
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="cmd_type">命令类型</param>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句或存储过程</param>
-        /// <param name="parameters">命令参数</param>
-        /// <returns></returns>
-        public DataSet AspNetPager(CommandType cmd_type, Wuqi.Webdiyer.AspNetPager pager, string sql, IList<IDataParameter> parameters)
-        {
-            return DataSet(cmd_type, sql, parameters, pager.CurrentPageIndex, pager.PageSize);
-        }
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句</param>
-        /// <param name="tableName">表的名称</param>
-        /// <returns></returns>
-        public DataSet AspNetPager(Wuqi.Webdiyer.AspNetPager pager, string sql, string tableName)
-        {
-            return AspNetPager(CommandType.Text, pager, sql, tableName, null);  
-        }
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="cmd_type">命令类型</param>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句或存储过程</param>
-        /// <param name="tableName">表的名称</param>
-        /// <param name="parameters">命令参数</param>
-        /// <returns></returns>
-        public DataSet AspNetPager(CommandType cmd_type, Wuqi.Webdiyer.AspNetPager pager, string sql, string tableName, IList<IDataParameter> parameters)
-        {
-            return DataSet(cmd_type, sql, tableName, parameters, pager.CurrentPageIndex, pager.PageSize);
-        }
-
-        /// <summary>
-        /// AspNetPager分页(存储过程DataReaer方式)
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">存储过程</param>
-        /// <returns></returns>
-        public IDataReader AspNetPagerProcedure(Wuqi.Webdiyer.AspNetPager pager, string sql)
-        {
-            List<IDataParameter> parameters = new List<IDataParameter>();
-            parameters.Add(new NpgsqlParameter("@pageindex", pager.CurrentPageIndex));
-            parameters.Add(new NpgsqlParameter("@pagesize", pager.PageSize));
-            parameters.Add(new NpgsqlParameter("@docount", "0"));
-            return ExecuteReader(CommandType.StoredProcedure, sql, parameters);
-        }
 
         /// <summary>
         /// 辅助方法

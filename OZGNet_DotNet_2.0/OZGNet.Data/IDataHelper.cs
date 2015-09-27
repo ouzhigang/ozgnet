@@ -162,47 +162,7 @@ namespace OZGNet.Data
         /// <param name="pageSize">每页显示记录数</param>
         /// <returns></returns>
         DataSet DataSet(CommandType cmd_type, string sql, string tableName, IList<IDataParameter> parameters, int pageIndex, int pageSize);
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句</param>
-        /// <returns></returns>
-        DataSet AspNetPager(Wuqi.Webdiyer.AspNetPager pager, string sql);
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="cmd_type">命令类型</param>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句或存储过程</param>
-        /// <param name="parameters">命令参数</param>
-        /// <returns></returns>
-        DataSet AspNetPager(CommandType cmd_type, Wuqi.Webdiyer.AspNetPager pager, string sql, IList<IDataParameter> parameters);
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句</param>
-        /// <param name="tableName">表的名称</param>
-        /// <returns></returns>
-        DataSet AspNetPager(Wuqi.Webdiyer.AspNetPager pager, string sql, string tableName);
-        /// <summary>
-        /// AspNetPager分页
-        /// </summary>
-        /// <param name="cmd_type">命令类型</param>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">SQL语句或存储过程</param>
-        /// <param name="tableName">表的名称</param>
-        /// <param name="parameters">命令参数</param>
-        /// <returns></returns>
-        DataSet AspNetPager(CommandType cmd_type, Wuqi.Webdiyer.AspNetPager pager, string sql, string tableName, IList<IDataParameter> parameters);
-        /// <summary>
-        /// AspNetPager分页(存储过程DataReaer方式)
-        /// </summary>
-        /// <param name="pager">AspNetPager分页控件</param>
-        /// <param name="sql">存储过程</param>
-        /// <returns></returns>
-        IDataReader AspNetPagerProcedure(Wuqi.Webdiyer.AspNetPager pager, string sql);
+        
         /// <summary>
         /// 获取一个数据库连接
         /// </summary>
