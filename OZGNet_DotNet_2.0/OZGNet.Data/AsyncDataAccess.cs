@@ -79,9 +79,7 @@ namespace OZGNet.Data
         private IDataHelper Db;
         private object MSqlStrObj;
         private SqlMethodOption MSqlMethod;
-
-        public int Tag;
-
+        
         public enum SqlMethodOption
         {
             DataSet,

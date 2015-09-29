@@ -194,6 +194,10 @@ namespace OZGNet
 
         }
 
+        //这两个字段的作用是，多个AsyncBase实例使用同一个回调事件，以辨别是哪个AsyncBase实例
+        public int Tag;
+        public string TagName;
+
         protected Thread HandleThread;
         protected SynchronizationContext SyncContext;
 

@@ -88,7 +88,6 @@ namespace OZGNet.Net
         private HttpWebRequest Request;
 
         public WebHeaderCollection RequestHeaders;
-        public int Tag;
 
         //事件委托
         public delegate void StartedEventHandler(object sender, StartedEventArgs e);
