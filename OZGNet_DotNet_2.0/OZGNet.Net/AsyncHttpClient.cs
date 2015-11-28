@@ -4,13 +4,21 @@ using System.Text;
 using System.Net;
 using System.Threading;
 using System.IO;
+using System.Collections;
+using System.Collections.Specialized;
 
 /*
-		需要支持cookie的话，加入ResponseHeadersEvent时间，然后e.Headers.Get("Set-Cookie")获得cookie数据，然后在下一次请求中加入对应的cookie到RequestHeaders，例如RequestHeaders.Add("Cookie", "PHPSESSID=q7ng2dja9kirktah0dv4hh16k6")
+        需要支持cookie的话，加入ResponseHeadersEvent时间，然后e.Headers.Get("Set-Cookie")获得cookie数据，然后在下一次请求中加入对应的cookie到RequestHeaders，例如RequestHeaders.Add("Cookie", "PHPSESSID=q7ng2dja9kirktah0dv4hh16k6")
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AsyncHttpClient Client = new AsyncHttpClient("http://news.163.com/");
+            NameValueCollection HttpParams = new NameValueCollection();
+            HttpParams.Add("a", "A");
+            HttpParams.Add("b", "B");
+            HttpParams.Add("c", "C");
+            
+            //AsyncHttpClient Client = new AsyncHttpClient("http://localhost/a.php");
+            AsyncHttpClient Client = new AsyncHttpClient("http://localhost/a.php", System.Net.WebRequestMethods.Http.Post, HttpParams);
             Client.StartedEvent += Client_StartedEvent;
             Client.ProgressChangedEvent += Client_ProgressChangedEvent;
             Client.CompletedEvent += Client_CompletedEvent;
@@ -84,6 +92,9 @@ namespace OZGNet.Net
         
         private string Url;
         private string HttpMethod;
+                
+        private NameValueCollection HttpParams;
+        private byte[] HttpParamsBytes; //post提交时用到
 
         private HttpWebRequest Request;
 
@@ -108,13 +119,16 @@ namespace OZGNet.Net
             this.Url = Url;
             this.HttpMethod = WebRequestMethods.Http.Get;
 
+            this.HttpParams = null;
+
             this.Init();
         }
 
-        public AsyncHttpClient(string Url, string HttpMethod)
+        public AsyncHttpClient(string Url, string HttpMethod, NameValueCollection HttpParams)
         {
             this.Url = Url;
             this.HttpMethod = HttpMethod;
+            this.HttpParams = HttpParams;
 
             this.Init();
         }
@@ -123,20 +137,67 @@ namespace OZGNet.Net
         {
             this.SyncContext = SynchronizationContext.Current;
 
-            this.Request = (HttpWebRequest)WebRequest.Create(this.Url);
+            //如果没有post的数据的话就转到get方式
+            if (this.HttpParams == null && this.HttpMethod.ToLower().Equals("post"))
+                this.HttpMethod = System.Net.WebRequestMethods.Http.Get;
 
-            //用了headers写入cookie的话，这里就不需要了
-            //this.Request.CookieContainer = new CookieContainer();
-            //this.Request.CookieContainer.Add(new Cookie("PHPSESSID", "fclsdovsq5ba43ctuqibi4m5m6", "/", "localhost"));
-
-            if (this.Request is HttpWebRequest)
+            if (this.HttpMethod.ToLower().Equals("post"))
             {
-                this.Request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36";
+                //post提交
 
+                this.Request = (HttpWebRequest)WebRequest.Create(this.Url);
+
+                //用了headers写入cookie的话，这里就不需要了
+                //this.Request.CookieContainer = new CookieContainer();
+                //this.Request.CookieContainer.Add(new Cookie("PHPSESSID", "fclsdovsq5ba43ctuqibi4m5m6", "/", "localhost"));
+
+                if (this.Request is HttpWebRequest)
+                {
+                    this.Request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36";
+                }
+
+                this.Request.Method = this.HttpMethod;
+                this.RequestHeaders = this.Request.Headers;
+
+                string param = string.Empty;
+                if (this.HttpParams != null)
+                {
+                    if (this.HttpParams.Count > 0)
+                    {
+                        foreach (string item in this.HttpParams.Keys)
+                        {
+                            param += item + "=" + this.HttpParams[item];
+                            param += "&";
+                        }
+                        param = param.Substring(0, param.Length - 1);
+                    }
+                    this.HttpParamsBytes = Encoding.UTF8.GetBytes(param);
+                    this.Request.ContentType = "application/x-www-form-urlencoded";
+                    this.Request.ContentLength = this.HttpParamsBytes.Length;
+                }
             }
-                        
-            this.Request.Method = this.HttpMethod;
-            this.RequestHeaders = this.Request.Headers;
+            else
+            {
+                //post以外的提交
+                if (this.HttpParams != null && this.HttpParams.Count > 0)
+                {
+                    this.Url += "?";
+                    foreach (string item in this.HttpParams.Keys)
+                    {
+                        this.Url += item + "=" + this.HttpParams[item];
+                        this.Url += "&";
+                    }
+                    this.Url = this.Url.Substring(0, this.Url.Length - 1);
+                }
+                this.Request = (HttpWebRequest)WebRequest.Create(this.Url);
+                if (this.Request is HttpWebRequest)
+                {
+                    this.Request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36";
+                }
+
+                this.Request.Method = this.HttpMethod;
+                this.RequestHeaders = this.Request.Headers;
+            }
 
             this.ReadTotal = 0;
         }
@@ -175,13 +236,32 @@ namespace OZGNet.Net
             try
             {
                 this.HandleStatus.WorkObject = this.Request;
-                this.Request.BeginGetResponse(new AsyncCallback(ReqResCallBack), this.HandleStatus);
+
+                if (this.Request.Method.ToLower().Equals("post"))
+                {
+                    this.Request.BeginGetRequestStream(new AsyncCallback(ReqPostCallBack), this.Request);
+                }
+                else
+                {
+                    this.Request.BeginGetResponse(new AsyncCallback(ReqResCallBack), this.HandleStatus);
+                }
+
             }
             catch (Exception ex)
             {
                 this.SyncContext.Post(ErrorEventCallBack, ex);
             }
             
+        }
+
+        private void ReqPostCallBack(IAsyncResult ar)
+        {
+            HttpWebRequest request = (HttpWebRequest)ar.AsyncState;
+            Stream reqStream = request.EndGetRequestStream(ar);
+            reqStream.Write(this.HttpParamsBytes, 0, this.HttpParamsBytes.Length);
+            reqStream.Close();
+
+            request.BeginGetResponse(new AsyncCallback(ReqResCallBack), this.HandleStatus);
         }
 
         private void ReqResCallBack(IAsyncResult ar)
