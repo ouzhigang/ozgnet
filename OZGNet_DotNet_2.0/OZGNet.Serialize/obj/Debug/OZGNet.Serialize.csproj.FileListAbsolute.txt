@@ -1,6 +1,0 @@
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Serialize\bin\Debug\OZGNet.Serialize.XML
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Serialize\bin\Debug\OZGNet.Serialize.dll
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Serialize\bin\Debug\OZGNet.dll
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Serialize\bin\Debug\OZGNet.xml
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Serialize\obj\Debug\OZGNet.Serialize.csprojResolveAssemblyReference.cache
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Serialize\obj\Debug\OZGNet.Serialize.dll

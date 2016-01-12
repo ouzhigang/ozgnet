@@ -1,7 +1,0 @@
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\bin\Debug\OZGNet.Compression.XML
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\bin\Debug\OZGNet.Compression.dll
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\bin\Debug\ICSharpCode.SharpZipLib.dll
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\bin\Debug\OZGNet.dll
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\bin\Debug\OZGNet.xml
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\obj\Debug\OZGNet.Compression.csprojResolveAssemblyReference.cache
-D:\root\Temp\ozgnet\OZGNet_DotNet_2.0\OZGNet.Compression\obj\Debug\OZGNet.Compression.dll
